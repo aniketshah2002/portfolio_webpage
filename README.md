@@ -2,11 +2,11 @@
 
 This repository contains the source code for my personal portfolio website. It's a static site built with HTML and CSS to showcase my skills, projects, and professional background.
 
-[![Live Demo](https://aniketshah2002.github.io/portfolio_webpage/)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=github)](https://your-username.github.io/your-repository-name/)
 
 ## ✨ Preview
 
-![Portfolio Screenshot](https://drive.google.com/file/d/1jcYuiZIZqqlYKwOn_pHUMErzSr6uRb7F/view?usp=share_link)
+![Portfolio Screenshot](https://via.placeholder.com/800x400.png/2d333b/ffffff?text=Your+Portfolio+Screenshot)
 
 ## 🚀 About This Project
 
