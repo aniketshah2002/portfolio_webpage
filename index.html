@@ -339,7 +339,71 @@
           My Projects
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
           <!--Project Number 1-->
+          <div
+            class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
+          >
+            <div data-aos="fade-up" data-aos-delay="300">
+              <img
+                src="assets/image/stock-analysis-dashboard.gif"
+                alt="Nifty 50 Stock Analysis Dashboard"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">
+                  NIFTY 50 STOCK ANALYSIS DASHBOARD
+                </h3>
+                <p class="text-slate-400 mb-4">
+                  Engineered a complete, automated ETL pipeline to analyze NIFTY 50 stock trends, starting with API-style data extraction using 
+                  Python (yfinance, pandas). This data was loaded directly into a Google BigQuery cloud data warehouse, where I used advanced 
+                  SQL (Window Functions, CTEs) to transform raw prices into complex technical indicators like Bollinger Bands and "Golden Cross" signals. 
+                  Finally, I built a dynamic, interactive BI dashboard in Looker Studio to visualize these insights and empower data-driven analysis.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span
+                    class="bg-lime-900/50 text-lime-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >Data Engineerng</span
+                  >
+                  <span
+                    class="bg-green-900/50 text-green-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >Pipeline Development</span
+                  >
+                  <span
+                    class="bg-yellow-900/50 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >Google Cloud Platform</span
+                  >
+                  <span
+                    class="bg-violet-900/50 text-violet-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >Data Modelling</span
+                  >
+                  <span
+                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >Looker Studio</span
+                  >
+                  <span
+                    class="bg-violet-900/50 text-violet-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >SQL</span
+                  >
+                  <span
+                    class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                    >BigQuery</span
+                  >
+                </div>
+                <div class="flex flex-col space-y-2 mt-4">
+                  <a
+                    href="https://lookerstudio.google.com/reporting/df88b94f-ed91-4f62-941b-2d8ab614e24c"
+                    target="_blank"
+                    class="text-blue-400 hover:text-blue-300 font-medium"
+                    >View on Looker Studio &rarr;</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!--Project Number 2-->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -398,7 +462,7 @@
             </div>
           </div>
 
-          <!-- Project Number 2 -->
+          <!-- Project Number 3 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -455,7 +519,7 @@
             </div>
           </div>
 
-          <!-- Project Number 3 -->
+          <!-- Project Number 4 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -521,7 +585,7 @@
             </div>
           </div>
 
-          <!-- Project Number 4 -->
+          <!-- Project Number 5 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -587,7 +651,7 @@
             </div>
           </div>
 
-          <!-- Project Number 5 -->
+          <!-- Project Number 6 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -631,7 +695,7 @@
             </div>
           </div>
 
-          <!-- Project Number 6 -->
+          <!-- Project Number 7 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -680,7 +744,7 @@
             </div>
           </div>
 
-          <!-- Project Number 7 -->
+          <!-- Project Number 8-->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -745,7 +809,7 @@
             </div>
           </div>
 
-          <!-- Project Number 8 -->
+          <!-- Project Number 9 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -796,7 +860,7 @@
             </div>
           </div>
 
-          <!-- Project Number 9 -->
+          <!-- Project Number 10 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -850,7 +914,7 @@
             </div>
           </div>
 
-          <!-- Project Number 10 -->
+          <!-- Project Number 11 -->
           <div
             class="bg-slate-800 rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 project-card-glow"
           >
@@ -1164,6 +1228,45 @@
                 alt="Firebase"
               />
               <span class="font-medium text-white">Firebase</span>
+            </div>
+            <!--BigQuery-->
+            <div
+              class="flex flex-col items-center"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/tech_skills/bigquery.svg"
+                class="w-16 h-16 mb-2"
+                alt="BigQuery"
+              />
+              <span class="font-medium text-white">BigQuery</span>
+            </div>
+            <!--Looker Studio-->
+            <div
+              class="flex flex-col items-center"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/tech_skills/lookerstudio.png"
+                class="w-16 h-16 mb-2"
+                alt="LookerStudio"
+              />
+              <span class="font-medium text-white">Looker Studio</span>
+            </div>
+            <!--Google Cloud Platform-->
+            <div
+              class="flex flex-col items-center"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <img
+                src="assets/tech_skills/googlecloud.png"
+                class="w-16 h-16 mb-2"
+                alt="Google Cloud Platform"
+              />
+              <span class="font-medium text-white">Google Cloud Platform</span>
             </div>
           </div>
         </div>
