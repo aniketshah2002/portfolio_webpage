@@ -17,10 +17,10 @@
     body {
       font-family: "Inter", sans-serif;
       /* Set the background image with a semi-transparent color overlay.
-             * This creates the "masked" effect and ensures text remains readable.
-             * The color rgba(15, 23, 42, 0.9) is a 90% opaque version of slate-900.
-             * IMPORTANT: Ensure 'background.webp' is in a folder like 'assets/image/'.
-            */
+         * This creates the "masked" effect and ensures text remains readable.
+         * The color rgba(15, 23, 42, 0.9) is a 90% opaque version of slate-900.
+         * IMPORTANT: Ensure 'background.webp' is in a folder like 'assets/image/'.
+         */
       background-image: linear-gradient(rgba(15, 23, 42, 0.9),
           rgba(15, 23, 42, 0.9)),
         url("https://images.unsplash.com/photo-1531297484001-80022131f5a1");
@@ -71,10 +71,7 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg,
-          #3b82f6,
-          #8b5cf6,
-          #c4b5fd);
+      background: linear-gradient(45deg, #3b82f6, #8b5cf6, #c4b5fd);
       /* Gradient colors */
       transform: scale(0.98);
       /* Slightly smaller than the card initially */
@@ -235,138 +232,138 @@
     }
 
     /* --- Start: Project Modal Styles --- */
-      /* These classes will be toggled by JavaScript */
-      #project-modal.visible {
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      #project-modal.visible #modal-content {
-        transform: scale(1);
-        opacity: 1;
-      }
-      
-      /* Smooth scrolling for modal content */
-      #modal-content {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-      }
-      #modal-content::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
-      }
-      /* --- End: Project Modal Styles --- */
+    /* These classes will be toggled by JavaScript */
+    /*
+        NOTE: We no longer use a single wrapper.
+        The 'visible' class is now toggled on both the
+        backdrop and the content card separately by JS.
+        The styles (opacity, visibility) are handled by
+        Tailwind classes directly in the HTML.
+      */
 
-      /* --- Start: Preloader Styles --- */
-      #preloader.hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
+    /* Smooth scrolling for modal content */
+    #modal-content {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
 
-      /* --- Start: Back to Top Button --- */
-      #back-to-top-btn.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      #back-to-top-btn { /* Initial state for smooth transition */
-        transform: translateY(20px);
-      }
-      /* --- End: Back to Top Button --- */
+    #modal-content::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Opera */
+    }
+
+    /* --- End: Project Modal Styles --- */
+
+    /* --- REMOVED THE CONFLICTING CSS BLOCK --- */
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* --- Start: Back to Top Button --- */
+    #back-to-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #back-to-top-btn {
+      /* Initial state for smooth transition */
+      transform: translateY(20px);
+    }
+
+    /* --- End: Back to Top Button --- */
   </style>
 </head>
 
 <body class="text-slate-300">
-  <div
-    id="preloader"
-    class="fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-slate-900 transition-opacity duration-500"
-  >
-  <lottie-player
-  src="assets/image/jsonfiles/preloader.json"
-  background="transparent"
-  speed="1"
-  style="width: 200px; height: 200px"
-  loop
-  autoplay
-></lottie-player>
-    <p class="text-slate-400 text-lg font-medium">
-      Loading portfolio...
-    </p>
+  <div id="preloader"
+    class="fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-slate-900 transition-opacity duration-500">
+    <lottie-player src="assets/image/jsonfiles/preloader.json" background="transparent" speed="1"
+      style="width: 200px; height: 200px" loop autoplay></lottie-player>
+    <p class="text-slate-400 text-lg font-medium">Loading portfolio...</p>
   </div>
   <header class="bg-slate-900/70 backdrop-blur-lg sticky top-0 z-50">
-  <header class="bg-slate-900/70 backdrop-blur-lg sticky top-0 z-50">
-    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-white">Aniket Shah</a>
-      <div class="hidden md:flex space-x-6 items-center">
-        <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-        <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-        <a href="#publications" class="hover:text-blue-400 transition-colors">Publications</a>
-        <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
+    <header class="bg-slate-900/70 backdrop-blur-lg sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-white">Aniket Shah</a>
+        <div class="hidden md:flex space-x-6 items-center">
+          <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
+          <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
+          <a href="#publications" class="hover:text-blue-400 transition-colors">Publications</a>
+          <a href="#skills" class="hover:text-blue-400 transition-colors">Skills</a>
 
-        <div class="relative group">
-          <a href="#contact"
-            class="bg-green-400 hover:bg-cyan-300 text-white font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer">Contact</a>
+          <div class="relative group">
+            <a href="#contact"
+              class="bg-green-400 hover:bg-cyan-300 text-white font-medium py-2 px-4 rounded-lg transition-colors cursor-pointer">Contact</a>
 
-          <div
-            class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max bg-slate-800 border border-slate-700 rounded-lg p-4 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
-            <div class="flex flex-col space-y-3 text-sm">
-              <a href="mailto:er.aniketshah@gmail.com"
-                class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                <span>er.aniketshah@gmail.com</span>
-              </a>
-              <a href="tel:+1234567890"
-                class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path
-                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.76a11.034 11.034 0 006.364 6.364l.76-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span>+91 9368389202</span>
-              </a>
-              <a href="https://www.linkedin.com/in/aniketcu/" target="_blank"
-                class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path fill-rule="evenodd"
-                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                    clip-rule="evenodd" />
-                </svg>
-                <span>LinkedIn</span>
-              </a>
-              <a href="https://github.com/aniketshah2002" target="_blank"
-                class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-                <span>GitHub</span>
-              </a>
-              <a href="assets/resume/Aniket_Shah_Resume.pdf" target="_blank"
-                class="inline-flex items-center bg-gradient-to-r from-green-400 to-cyan-300 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-              </svg>
-                Download My Resume
-              </a>
+            <div
+              class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-max bg-slate-800 border border-slate-700 rounded-lg p-4 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+              <div class="flex flex-col space-y-3 text-sm">
+                <a href="mailto:er.aniketshah@gmail.com"
+                  class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  <span>er.aniketshah@gmail.com</span>
+                </a>
+                <a href="tel:+1234567890"
+                  class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.76a11.034 11.034 0 006.364 6.364l.76-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <span>+91 9368389202</span>
+                </a>
+                <a href="https://www.linkedin.com/in/aniketcu/" target="_blank"
+                  class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/aniketshah2002" target="_blank"
+                  class="flex items-center gap-x-3 text-slate-300 hover:text-blue-400 transition-colors">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+                <a href="assets/resume/Aniket_Shah_Resume.pdf" target="_blank"
+                  class="inline-flex items-center bg-gradient-to-r from-green-400 to-cyan-300 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download My Resume
+                </a>
+              </div>
             </div>
           </div>
         </div>
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </nav>
+      <div id="mobile-menu" class="hidden md:hidden">
+        <a href="#about" class="block py-2 px-4 text-sm hover:bg-slate-800">About</a>
+        <a href="#projects" class="block py-2 px-4 text-sm hover:bg-slate-800">Projects</a>
+        <a href="#skills" class="block py-2 px-4 text-sm hover:bg-slate-800">Skills</a>
+        <a href="#learning" class="block py-2 px-4 text-sm hover:bg-slate-800">Learning</a>
+        <a href="#publications" class="block py-2 px-4 text-sm hover:bg-slate-800">Publications</a>
+        <a href="#contact" class="block py-2 px-4 text-sm hover:bg-slate-800">Contact</a>
       </div>
-      <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden">
-      <a href="#about" class="block py-2 px-4 text-sm hover:bg-slate-800">About</a>
-      <a href="#projects" class="block py-2 px-4 text-sm hover:bg-slate-800">Projects</a>
-      <a href="#skills" class="block py-2 px-4 text-sm hover:bg-slate-800">Skills</a>
-      <a href="#learning" class="block py-2 px-4 text-sm hover:bg-slate-800">Learning</a>
-      <a href="#publications" class="block py-2 px-4 text-sm hover:bg-slate-800">Publications</a>
-      <a href="#contact" class="block py-2 px-4 text-sm hover:bg-slate-800">Contact</a>
-    </div>
+    </header>
   </header>
 
   <main class="container mx-auto px-6 py-12">
@@ -412,8 +409,6 @@
         My Projects
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!--Project Number 1-->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/ai-analytics-job-pipeline-dashboard.gif" alt="ai-analytics-job-pipeline-dashboard"
@@ -423,14 +418,16 @@
                 AI ANALYTICS JOB PIPELINE DASHBOARD
               </h3>
               <p class="text-slate-400 mb-4">
-                Built a data pipeline to find out what skills are really in demand for data jobs. The Python script
-                scrapes live job postings,
-                uses spaCy (NLP) to read the descriptions and extract tech keywords, and then loads all the clean data
-                into Google BigQuery.
-                Then built a Looker Studio dashboard to visualize the trends, showing how often AI skills pop up
-                compared to traditional ones.
-                The project culminates in an interactive Looker Studio dashboard that visualizes trends and answers the
-                question: "How integrated is AI in the data analytics industry today?"
+                Built a data pipeline to find out what skills are really in
+                demand for data jobs. The Python script scrapes live job
+                postings, uses spaCy (NLP) to read the descriptions and
+                extract tech keywords, and then loads all the clean data into
+                Google BigQuery. Then built a Looker Studio dashboard to
+                visualize the trends, showing how often AI skills pop up
+                compared to traditional ones. The project culminates in an
+                interactive Looker Studio dashboard that visualizes trends and
+                answers the question: "How integrated is AI in the data
+                analytics industry today?"
               </p>
 
               <div class="flex flex-wrap gap-2 mb-4">
@@ -451,21 +448,13 @@
               <div class="mt-6">
                 <button
                   class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-                  
                   data-title="AI ANALYTICS JOB PIPELINE DASHBOARD"
-                  
                   data-image="assets/image/ai-analytics-job-pipeline-dashboard.gif"
-                  
                   data-description="Built a data pipeline to find out what skills are really in demand for data jobs. The Python script scrapes live job postings, uses spaCy (NLP) to read the descriptions and extract tech keywords, and then loads all the clean data into Google BigQuery. Then built a Looker Studio dashboard to visualize the trends, showing how often AI skills pop up compared to traditional ones. The project culminates in an interactive Looker Studio dashboard that visualizes trends and answers the question: &quot;How integrated is AI in the data analytics industry today?&quot;"
-                  
                   data-tech="AI,API Integration (SerpApi),Google Cloud Platform,Google BigQuery,Looker Studio,GitHub,ETL Pipeline Development"
-                  
                   data-link-1-text="View on Looker Studio"
                   data-link-1-url="https://lookerstudio.google.com/reporting/ae8956d2-444f-44b1-bc54-26e38b889d2d"
-                  
-                  data-link-2-text=""
-                  data-link-2-url=""
-                >
+                  data-link-2-text="" data-link-2-url="">
                   View Details &rarr;
                 </button>
               </div>
@@ -473,7 +462,6 @@
           </div>
         </div>
 
-        <!--Project Number 2-->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/stock-analysis-dashboard.gif" alt="Nifty 50 Stock Analysis Dashboard"
@@ -483,13 +471,14 @@
                 NIFTY 50 STOCK ANALYSIS DASHBOARD
               </h3>
               <p class="text-slate-400 mb-4">
-                Engineered a complete, automated ETL pipeline to analyze NIFTY 50 stock trends, starting with API-style
-                data extraction using
-                Python (yfinance, pandas). This data was loaded directly into a Google BigQuery cloud data warehouse,
-                where I used advanced
-                SQL (Window Functions, CTEs) to transform raw prices into complex technical indicators like Bollinger
-                Bands and "Golden Cross" signals.
-                Finally, I built a dynamic, interactive BI dashboard in Looker Studio to visualize these insights and
+                Engineered a complete, automated ETL pipeline to analyze NIFTY
+                50 stock trends, starting with API-style data extraction using
+                Python (yfinance, pandas). This data was loaded directly into
+                a Google BigQuery cloud data warehouse, where I used advanced
+                SQL (Window Functions, CTEs) to transform raw prices into
+                complex technical indicators like Bollinger Bands and "Golden
+                Cross" signals. Finally, I built a dynamic, interactive BI
+                dashboard in Looker Studio to visualize these insights and
                 empower data-driven analysis.
               </p>
 
@@ -511,30 +500,20 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="NIFTY 50 STOCK ANALYSIS DASHBOARD"
-  
-  data-image="assets/image/stock-analysis-dashboard.gif"
-  
-  data-description="Engineered a complete, automated ETL pipeline to analyze NIFTY 50 stock trends, starting with API-style data extraction using Python (yfinance, pandas). This data was loaded directly into a Google BigQuery cloud data warehouse, where I used advanced SQL (Window Functions, CTEs) to transform raw prices into complex technical indicators like Bollinger Bands and &quot;Golden Cross&quot; signals. Finally, I built a dynamic, interactive BI dashboard in Looker Studio to visualize these insights and empower data-driven analysis."
-  
-  data-tech="Data Engineerng,Pipeline Development,Google Cloud Platform,Data Modelling,Looker Studio,SQL,BigQuery"
-  
-  data-link-1-text="View on Looker Studio"
-  data-link-1-url="https://lookerstudio.google.com/reporting/ef15c54c-f11a-428a-86c3-16a3a41f6499/page/p_h0y8y1sjqd"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="NIFTY 50 STOCK ANALYSIS DASHBOARD" data-image="assets/image/stock-analysis-dashboard.gif"
+                  data-description="Engineered a complete, automated ETL pipeline to analyze NIFTY 50 stock trends, starting with API-style data extraction using Python (yfinance, pandas). This data was loaded directly into a Google BigQuery cloud data warehouse, where I used advanced SQL (Window Functions, CTEs) to transform raw prices into complex technical indicators like Bollinger Bands and &quot;Golden Cross&quot; signals. Finally, I built a dynamic, interactive BI dashboard in Looker Studio to visualize these insights and empower data-driven analysis."
+                  data-tech="Data Engineerng,Pipeline Development,Google Cloud Platform,Data Modelling,Looker Studio,SQL,BigQuery"
+                  data-link-1-text="View on Looker Studio"
+                  data-link-1-url="https://lookerstudio.google.com/reporting/df88b94f-ed91-4f62-941b-2d8ab614e24c"
+                  data-link-2-text="" data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!--Project Number 3-->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/dashboard.gif" alt="E-Commerce Sales Interactive Dashboard"
@@ -546,8 +525,8 @@
               <p class="text-slate-400 mb-4">
                 Designed and built an interactive e-commerce sales dashboard
                 using SQL for data preparation and Tableau for visualization.
-                The project involved transforming raw data from multiple
-                tables by cleaning and joining it with SQL to create a single,
+                The project involved transforming raw data from multiple tables
+                by cleaning and joining it with SQL to create a single,
                 analysis-ready dataset. The final dashboard visualizes core
                 business metrics, including sales trends over time,
                 top-selling product categories, and key geographical markets
@@ -567,30 +546,20 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="E-COMMERCE SALES INTERACTIVE DASHBOARD"
-  
-  data-image="assets/image/dashboard.gif"
-  
-  data-description="Designed and built an interactive e-commerce sales dashboard using SQL for data preparation and Tableau for visualization. The project involved transforming raw data from multiple tables by cleaning and joining it with SQL to create a single, analysis-ready dataset. The final dashboard visualizes core business metrics, including sales trends over time, top-selling product categories, and key geographical markets to provide clear, actionable insights."
-  
-  data-tech="SQL,DB Browser,Tableau,Data Visualization,Public Dashboard"
-  
-  data-link-1-text="View on Tableau Public"
-  data-link-1-url="https://public.tableau.com/app/profile/aniket.shah8673/viz/E-CommerceSalesDashboard_17192408986510/Dashboard1"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="E-COMMERCE SALES INTERACTIVE DASHBOARD" data-image="assets/image/dashboard.gif"
+                  data-description="Designed and built an interactive e-commerce sales dashboard using SQL for data preparation and Tableau for visualization. The project involved transforming raw data from multiple tables by cleaning and joining it with SQL to create a single, analysis-ready dataset. The final dashboard visualizes core business metrics, including sales trends over time, top-selling product categories, and key geographical markets to provide clear, actionable insights."
+                  data-tech="SQL,DB Browser,Tableau,Data Visualization,Public Dashboard"
+                  data-link-1-text="View on Tableau Public"
+                  data-link-1-url="https://public.tableau.com/views/E-CommerceSalesInteractiveDashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                  data-link-2-text="" data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 4 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/india's ev market intelligence dashboard.gif"
@@ -622,30 +591,21 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="INDIA'S EV MARKET INTELLIGENCE DASHBOARD"
-  
-  data-image="assets/image/india's ev market intelligence dashboard.gif"
-  
-  data-description="Developed a dynamic Tableau dashboard to analyze and forecast India's Electric Vehicle (EV) market trajectory using IEA data. This project transforms complex data into actionable insights, featuring predictive growth models, key performance indicators (KPIs), and interactive filters to explore the market's composition through 2030."
-  
-  data-tech="Data Cleaning & Preparation,Tableau,Business Intelligence,Data Visualization,MS Excel"
-  
-  data-link-1-text="View on Tableau Public"
-  data-link-1-url="https://public.tableau.com/app/profile/aniket.shah8673/viz/IndiasEVMobilityDashboard/EVMarketIntelligenceDashboard"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="INDIA'S EV MARKET INTELLIGENCE DASHBOARD"
+                  data-image="assets/image/india's ev market intelligence dashboard.gif"
+                  data-description="Developed a dynamic Tableau dashboard to analyze and forecast India's Electric Vehicle (EV) market trajectory using IEA data. This project transforms complex data into actionable insights, featuring predictive growth models, key performance indicators (KPIs), and interactive filters to explore the market's composition through 2030."
+                  data-tech="Data Cleaning & Preparation,Tableau,Business Intelligence,Data Visualization,MS Excel"
+                  data-link-1-text="View on Tableau Public"
+                  data-link-1-url="https://public.tableau.com/views/IndiasEVMarketIntelligenceDashboard/IndiasEVMarketIntelligenceDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                  data-link-2-text="" data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 5 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/OCR_DEMO.gif" alt="Image to Text Generator" class="w-full h-48 object-cover" />
@@ -677,30 +637,19 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="IMAGE TO TEXT GENERATOR"
-  
-  data-image="assets/image/OCR_DEMO.gif"
-  
-  data-description="This project is an intelligent Image-to-Text (OCR) web application that converts text from user-uploaded images into editable, formatted text. Built with a Python and Flask backend, the application uses the EasyOCR library to perform text recognition."
-  
-  data-tech="Python,Flask,HTML,EasyOCR,OpenCV,Gunicorn"
-  
-  data-link-1-text="View Live Demo"
-  data-link-1-url="https://image-to-text-generator-p58j.onrender.com/"
-  
-  data-link-2-text="View on GitHub"
-  data-link-2-url="https://github.com/aniketshah2002/Image-to-Text-Generator"
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="IMAGE TO TEXT GENERATOR" data-image="assets/image/OCR_DEMO.gif"
+                  data-description="This project is an intelligent Image-to-Text (OCR) web application that converts text from user-uploaded images into editable, formatted text. Built with a Python and Flask backend, the application uses the EasyOCR library to perform text recognition."
+                  data-tech="Python,Flask,HTML,EasyOCR,OpenCV,Gunicorn" data-link-1-text="View Live Demo"
+                  data-link-1-url="https://image-to-text-ocr-app.onrender.com/" data-link-2-text="View on GitHub"
+                  data-link-2-url="https://github.com/aniketshah2002/Image-to-text-OCR-App">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 6 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/nexora.png" alt="Nexora Project" class="w-full h-48 object-cover" />
@@ -732,30 +681,20 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="NEXORA - AN AI CHATBOT"
-  
-  data-image="assets/image/nexora.png"
-  
-  data-description="Nexora is an interactive AI chatbot designed for a minimalist and engaging user experience. Built with a Node.js backend, a SQLite database for chat history, and a dynamic frontend powered by HTML, Tailwind CSS, and JavaScript, Nexora leverages the Google Gemini API to provide intelligent responses."
-  
-  data-tech="Node.js,SQLite,HTML,Tailwind CSS,JavaScript,Google Gemini API"
-  
-  data-link-1-text="View on GitHub"
-  data-link-1-url="https://github.com/aniketshah2002/Nexora-An-AI-Chatbot"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="NEXORA - AN AI CHATBOT" data-image="assets/image/nexora.png"
+                  data-description="Nexora is an interactive AI chatbot designed for a minimalist and engaging user experience. Built with a Node.js backend, a SQLite database for chat history, and a dynamic frontend powered by HTML, Tailwind CSS, and JavaScript, Nexora leverages the Google Gemini API to provide intelligent responses."
+                  data-tech="Node.js,SQLite,HTML,Tailwind CSS,JavaScript,Google Gemini API"
+                  data-link-1-text="Live Demo"
+                  data-link-1-url="https://nexora-a-chatbot.onrender.com/" data-link-2-text="View on GitHub"
+                  data-link-2-url="https://github.com/aniketshah2002/nexora_chatbot">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 7 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/sentimentImage.jpeg" alt="Sentiment Analysis Project"
@@ -777,32 +716,22 @@
                   class="bg-green-900/50 text-green-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Scikit-learn</span>
                 <span
                   class="bg-yellow-900/50 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Pandas</span>
-              </div> <div class="mt-6">
+              </div>
+              <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="SENTIMENT ANALYSIS OF MOVIE REVIEWS"
-  
-  data-image="assets/image/sentimentImage.jpeg"
-  
-  data-description="Developed a machine learning model to classify movie reviews as positive or negative. This project involved data preprocessing, feature extraction with TF-IDF, and training a Logistic Regression model."
-  
-  data-tech="Python,Scikit-learn,Pandas"
-  
-  data-link-1-text="View on GitHub"
-  data-link-1-url="https://github.com/aniketshah2002/Sentiment-Analysis"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="SENTIMENT ANALYSIS OF MOVIE REVIEWS" data-image="assets/image/sentimentImage.jpeg"
+                  data-description="Developed a machine learning model to classify movie reviews as positive or negative. This project involved data preprocessing, feature extraction with TF-IDF, and training a Logistic Regression model."
+                  data-tech="Python,Scikit-learn,Pandas" data-link-1-text="View on GitHub"
+                  data-link-1-url="https://github.com/aniketshah2002/SentimentAnalyzerProject" data-link-2-text=""
+                  data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 8 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/objectdetection.webp" alt="Object Detection Project"
@@ -827,32 +756,22 @@
                   class="bg-yellow-900/50 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Numpy</span>
                 <span
                   class="bg-violet-900/50 text-violet-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">YOLOv3</span>
-              </div> <div class="mt-6">
+              </div>
+              <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="OBJECT DETECTION"
-  
-  data-image="assets/image/objectdetection.webp"
-  
-  data-description="This project is a high-performance, real-time object detection application built using Python and the OpenCV library. It leverages the powerful YOLOv3 (You Only Look Once) algorithm to identify and classify multiple objects in a live webcam feed, displaying the results instantly."
-  
-  data-tech="Python,OpenCV,Numpy,YOLOv3"
-  
-  data-link-1-text="View on GitHub"
-  data-link-1-url="https://github.com/aniketshah2002/Object-Detection"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="OBJECT DETECTION" data-image="assets/image/objectdetection.webp"
+                  data-description="This project is a high-performance, real-time object detection application built using Python and the OpenCV library. It leverages the powerful YOLOv3 (You Only Look Once) algorithm to identify and classify multiple objects in a live webcam feed, displaying the results instantly."
+                  data-tech="Python,OpenCV,Numpy,YOLOv3" data-link-1-text="View on GitHub"
+                  data-link-1-url="https://github.com/aniketshah2002/real-time-object-detection" data-link-2-text=""
+                  data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 9 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/GermaiQ.png" alt="GermaiQ Project" class="w-full h-48 object-cover" />
@@ -881,30 +800,19 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="GEMRAIQ - YOUR AI COMPANION FOR GERMAN FLUENCY"
-  
-  data-image="assets/image/GermaiQ.png"
-  
-  data-description="GermaiQ is an interactive, full-stack web application designed to accelerate the German language learning process. Built with a Python and Flask backend, the application leverages the power of two distinct large language models to provide a comprehensive learning experience."
-  
-  data-tech="HTML,CSS3,Tailwind CSS,Flask,Gunicorn,Python"
-  
-  data-link-1-text="View Live Demo"
-  data-link-1-url="https://gemraq.onrender.com/"
-  
-  data-link-2-text="View on GitHub"
-  data-link-2-url="https://github.com/aniketshah2002/GermaiQ"
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="GEMRAIQ - YOUR AI COMPANION FOR GERMAN FLUENCY" data-image="assets/image/GermaiQ.png"
+                  data-description="GermaiQ is an interactive, full-stack web application designed to accelerate the German language learning process. Built with a Python and Flask backend, the application leverages the power of two distinct large language models to provide a comprehensive learning experience."
+                  data-tech="HTML,CSS3,Tailwind CSS,Flask,Gunicorn,Python" data-link-1-text="View Live Demo"
+                  data-link-1-url="https://germaiq.onrender.com/" data-link-2-text="View on GitHub"
+                  data-link-2-url="https://github.com/aniketshah2002/germaiQ">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 10 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/crossLingual copy.png" alt="Cross Lingual QA System Project"
@@ -931,32 +839,22 @@
                   class="bg-yellow-900/50 text-yellow-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">Sentence-Transformers</span>
                 <span
                   class="bg-violet-900/50 text-violet-300 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">FAISS</span>
-              </div> <div class="mt-6">
+              </div>
+              <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="CROSS LINGUAL QA SYSTEM"
-  
-  data-image="assets/image/crossLingual copy.png"
-  
-  data-description="This project is a cross-lingual question-answering system that bridges language barriers. It uses a multilingual sentence-transformer model to understand the meaning of a user's query in English and retrieves the most relevant sentences from a German-language knowledge base, demonstrating a practical application of semantic search and information retrieval."
-  
-  data-tech="Python,Flask,Sentence-Transformers,FAISS"
-  
-  data-link-1-text="View on GitHub"
-  data-link-1-url="httpshttps://github.com/aniketshah2002/Cross-Lingual-Question-Answering-System"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="CROSS LINGUAL QA SYSTEM" data-image="assets/image/crossLingual copy.png"
+                  data-description="This project is a cross-lingual question-answering system that bridges language barriers. It uses a multilingual sentence-transformer model to understand the meaning of a user's query in English and retrieves the most relevant sentences from a German-language knowledge base, demonstrating a practical application of semantic search and information retrieval."
+                  data-tech="Python,Flask,Sentence-Transformers,FAISS" data-link-1-text="View on GitHub"
+                  data-link-1-url="https://github.com/aniketshah2002/cross-lingual-qa-system"
+                  data-link-2-text="" data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 11 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/buzzlet.png" alt="News Website Project" class="w-full h-48 object-cover" />
@@ -980,30 +878,20 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="BUZZLET NEWS WEBSITE"
-  
-  data-image="assets/image/buzzlet.png"
-  
-  data-description="Buzzlet is a modern and dynamic front-end for a news website, designed to deliver the latest updates through a clean, intuitive, and user-friendly interface. Built with core web technologies, this project serves as the main homepage, featuring sections for a top story, trending articles, and a breaking news ticker."
-  
-  data-tech="HTML,CSS,JavaScript"
-  
-  data-link-1-text="View Live Demo"
-  data-link-1-url="httpss://aniketshah2002.github.io/Buzzlet-News-Website/"
-  
-  data-link-2-text="View on GitHub"
-  data-link-2-url="httpss://github.com/aniketshah2002/Buzzlet-News-Website"
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="BUZZLET NEWS WEBSITE" data-image="assets/image/buzzlet.png"
+                  data-description="Buzzlet is a modern and dynamic front-end for a news website, designed to deliver the latest updates through a clean, intuitive, and user-friendly interface. Built with core web technologies, this project serves as the main homepage, featuring sections for a top story, trending articles, and a breaking news ticker."
+                  data-tech="HTML,CSS,JavaScript" data-link-1-text="View Live Demo"
+                  data-link-1-url="https://aniketshah2002.github.io/Buzzlet_NewsWebsite/"
+                  data-link-2-text="View on GitHub"
+                  data-link-2-url="https://github.com/aniketshah2002/Buzzlet_NewsWebsite">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project Number 12 -->
         <div class="bg-slate-800 rounded-lg overflow-hidden project-card-glow" data-aos="fade-up" data-aos-delay="400">
           <div data-tilt>
             <img src="assets/image/oneShop_homepage.png" alt="OneShop App Project" class="w-full h-48 object-cover" />
@@ -1012,10 +900,10 @@
                 ONEHSOP - AN APP WHICH HAVE THE BEST DEALS FOR YOU
               </h3>
               <p class="text-slate-400 mb-4">
-                One Shop is an Flutter based application where you can have
-                the bestest deals from the market like Amazon, Flipkart etc.
-                It is your one place where you can find variety of deals,
-                which you can't ignore.
+                One Shop is an Flutter based application where you can have the
+                bestest deals from the market like Amazon, Flipkart etc. It is
+                your one place where you can find variety of deals, which you
+                can't ignore.
               </p>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span
@@ -1035,30 +923,20 @@
               </div>
               <div class="mt-6">
                 <button
-  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
-  
-  data-title="ONEHSOP - AN APP WHICH HAVE THE BEST DEALS FOR YOU"
-  
-  data-image="assets/image/oneShop_homepage.png"
-  
-  data-description="One Shop is an Flutter based application where you can have the bestest deals from the market like Amazon, Flipkart etc. It is your one place where you can find variety of deals, which you can't ignore."
-  
-  data-tech="Flutter,Dart,Firebase,Shimmer,URL Launcher,Google Sign-in,Firebase Cloud Messaging"
-  
-  data-link-1-text="View on GitHub"
-  data-link-1-url="https://github.com/aniketshah2002/OneShop"
-  
-  data-link-2-text=""
-  data-link-2-url=""
->
-  View Details &rarr;
-</button>
+                  class="view-details-btn inline-flex items-center bg-gradient-to-r from-blue-600 to-violet-500 text-white font-bold py-2 px-5 rounded-lg shadow-lg transition-all duration-200 hover:-translate-y-1 hover:from-blue-500 hover:to-violet-400 hover:shadow-xl"
+                  data-title="ONEHSOP - AN APP WHICH HAVE THE BEST DEALS FOR YOU"
+                  data-image="assets/image/oneShop_homepage.png"
+                  data-description="One Shop is an Flutter based application where you can have the bestest deals from the market like Amazon, Flipkart etc. It is your one place where you can find variety of deals, which you can't ignore."
+                  data-tech="Flutter,Dart,Firebase,Shimmer,URL Launcher,Google Sign-in,Firebase Cloud Messaging"
+                  data-link-1-text="View on GitHub" data-link-1-url="https://github.com/aniketshah2002/oneshop_application"
+                  data-link-2-text="" data-link-2-url="">
+                  View Details &rarr;
+                </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!--Next Project-->
         <div
           class="bg-slate-800 rounded-lg overflow-hidden flex items-center justify-center border-2 border-dashed border-slate-700 project-card-glow">
           <div class="text-center p-6" data-aos="fade-up" data-aos-delay="500">
@@ -1073,7 +951,6 @@
       </div>
     </section>
 
-    <!--Publications Section-->
     <section id="publications" class="pt-0 pb-12">
       <h2
         class="text-3xl font-bold text-white text-center mb-12 bg-gradient-to-r from-green-500 to-cyan-400 py-4 rounded-md shadow-lg animate-gradient"
@@ -1082,7 +959,6 @@
       </h2>
 
       <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
         <div class="flip-card" data-aos="fade-up" data-aos-delay="100">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -1090,14 +966,17 @@
             </div>
             <div class="flip-card-back">
               <h3 class="text-xl font-bold text-white mb-2">
-                Real-Time Image and Video Captioning Using Advanced Deep Learning Models
+                Real-Time Image and Video Captioning Using Advanced Deep
+                Learning Models
               </h3>
               <p class="text-slate-200 italic mb-2">
-                Aniket Shah, Vishal Yadav, Akanksha Dhanraj, Sourabh Chouhan, Sudit Singh, Vishal Sharma
+                Aniket Shah, Vishal Yadav, Akanksha Dhanraj, Sourabh Chouhan,
+                Sudit Singh, Vishal Sharma
               </p>
               <p class="text-slate-300 font-bold mb-4">
-                Published in International Journal of Scientific Research in Engineering and Management (IJSREM) on
-                Volume 08, November 2024
+                Published in International Journal of Scientific Research in
+                Engineering and Management (IJSREM) on Volume 08, November
+                2024
               </p>
               <a href="https://ijsrem.com/download/real-time-image-and-video-captioning-using-advanced-deep-learning-models/"
                 target="_blank" class="text-blue-400 hover:text-blue-300 font-medium">View Publication &rarr;</a>
@@ -1114,9 +993,11 @@
                 From Concept to Publication
               </h3>
               <p class="text-slate-400 italic mb-2">
-                My intellectual curiosity drives me to constantly explore and contribute. While I'm building my
-                portfolio of registered publications, I'm actively engaged in fascinating projects that I look forward
-                to sharing. Stay tuned for groundbreaking insights!
+                My intellectual curiosity drives me to constantly explore and
+                contribute. While I'm building my portfolio of registered
+                publications, I'm actively engaged in fascinating projects
+                that I look forward to sharing. Stay tuned for groundbreaking
+                insights!
               </p>
               <a href="#contact" class="text-blue-400 hover:text-blue-300 font-medium">Learn More About My Work
                 &rarr;</a>
@@ -1126,7 +1007,6 @@
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="py-12">
       <h2
         class="text-3xl font-bold text-white text-center mb-12 bg-gradient-to-r from-green-500 to-cyan-400 py-4 rounded-md shadow-lg animate-gradient"
@@ -1142,32 +1022,32 @@
           <div class="flex flex-wrap justify-center gap-3">
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/python_icon.png" alt="Python" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/python_icon.png" alt="Python" class="w-5 h-5 mr-2" />
               Python
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/sci-kit_learn.png" alt="Scikit-learn" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/sci-kit_learn.png" alt="Scikit-learn" class="w-5 h-5 mr-2" />
               Scikit-learn
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/pandas.png" alt="Pandas" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/pandas.png" alt="Pandas" class="w-5 h-5 mr-2" />
               Pandas & NumPy
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/tensorflow.png" alt="TensorFlow" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/tensorflow.png" alt="TensorFlow" class="w-5 h-5 mr-2" />
               TensorFlow
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/pytorch.png" alt="PyTorch" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/pytorch.png" alt="PyTorch" class="w-5 h-5 mr-2" />
               PyTorch
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/opencv.png" alt="OpenCV" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/opencv.png" alt="OpenCV" class="w-5 h-5 mr-2" />
               OpenCV
             </span>
           </div>
@@ -1180,27 +1060,27 @@
           <div class="flex flex-wrap justify-center gap-3">
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/sql.png" alt="SQL" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/sql.png" alt="SQL" class="w-5 h-5 mr-2" />
               SQL
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/bigquery.svg" alt="BigQuery" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/bigquery.svg" alt="BigQuery" class="w-5 h-5 mr-2" />
               Google BigQuery
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/lookerstudio.png" alt="Looker Studio" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/lookerstudio.png" alt="Looker Studio" class="w-5 h-5 mr-2" />
               Looker Studio
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/tableau.png" alt="Tableau" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/tableau.png" alt="Tableau" class="w-5 h-5 mr-2" />
               Tableau
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/ms-excel.png" alt="MS Excel" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/ms-excel.png" alt="MS Excel" class="w-5 h-5 mr-2" />
               MS Excel
             </span>
           </div>
@@ -1213,51 +1093,46 @@
           <div class="flex flex-wrap justify-center gap-3">
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/html.png" alt="HTML" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/html.png" alt="HTML" class="w-5 h-5 mr-2" />
               HTML
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/css.svg" alt="CSS" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/css.svg" alt="CSS" class="w-5 h-5 mr-2" />
               CSS & Tailwind
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/flask.png" alt="Flask" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/flask.png" alt="Flask" class="w-5 h-5 mr-2" />
               Flask
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/googlecloud.png" alt="Google Cloud" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/googlecloud.png" alt="Google Cloud" class="w-5 h-5 mr-2" />
               Google Cloud
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/firebase_icon.png" alt="Firebase" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/firebase_icon.png" alt="Firebase" class="w-5 h-5 mr-2" />
               Firebase
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/flutter_icon.png" alt="Flutter" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/flutter_icon.png" alt="Flutter" class="w-5 h-5 mr-2" />
               Flutter & Dart
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/github.png" alt="Git & GitHub" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/github.png" alt="Git & GitHub" class="w-5 h-5 mr-2" />
               Git & GitHub
             </span>
             <span
               class="flex items-center bg-slate-700 text-slate-200 rounded-full px-4 py-2 text-sm font-medium transition-transform duration-200 hover:scale-105 hover:-translate-y-1">
-              <img src="assets/tech_skills/render_icon.png" alt="Render" class="w-5 h-5 mr-2">
+              <img src="assets/tech_skills/render_icon.png" alt="Render" class="w-5 h-5 mr-2" />
               Render
             </span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section id="contact" class="pb-12">
-      </div>
       </div>
     </section>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -1289,23 +1164,11 @@
     </section>
   </main>
 
-  <button
-    id="back-to-top-btn"
-    class="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-green-500 to-cyan-400 text-white rounded-full shadow-lg transition-all duration-300 opacity-0 invisible"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="3"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M5 15l7-7 7 7"
-      />
+  <button id="back-to-top-btn"
+    class="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-green-500 to-cyan-400 text-white rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="3">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
     </svg>
   </button>
 
@@ -1316,10 +1179,9 @@
   </footer>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js">
-  </script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script>
-
     // ===================================
     //       PRELOADER SCRIPT
     // ===================================
@@ -1346,19 +1208,23 @@
       //       PROJECT MODAL SCRIPT
       // ===================================
       document.addEventListener("DOMContentLoaded", () => {
-        const modal = document.getElementById("project-modal");
+        // --- Modal Elements ---
+        const backdrop = document.getElementById("project-backdrop");
         const modalContent = document.getElementById("modal-content");
         const modalCloseBtn = document.getElementById("modal-close-btn");
         const viewDetailsBtns = document.querySelectorAll(".view-details-btn");
+        // Drag-related variables removed for stability
 
+        // --- Content Placeholders ---
         const modalTitle = document.getElementById("modal-title");
         const modalImage = document.getElementById("modal-image");
         const modalDescription = document.getElementById("modal-description");
         const modalTechStack = document.getElementById("modal-tech-stack");
         const modalLinks = document.getElementById("modal-links");
 
+        // --- Open Modal Logic ---
         viewDetailsBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
+          btn.addEventListener("click", (e) => { 
             const data = btn.dataset;
 
             // 1. Populate Modal Content
@@ -1367,7 +1233,7 @@
             modalDescription.textContent = data.description;
 
             // 2. Populate Tech Stack
-            modalTechStack.innerHTML = ""; // Clear old tags
+            modalTechStack.innerHTML = "";
             if (data.tech) {
               const techs = data.tech.split(",");
               techs.forEach((tech) => {
@@ -1378,79 +1244,127 @@
               });
             }
 
-            // 3. Populate Links
+            // 3. Populate Links (NEW, MORE ROBUST METHOD)
             modalLinks.innerHTML = ""; // Clear old links
             
-            // Link 1
-            if (data.link1Url && data.link1Text) {
+            // We will use getAttribute() for reliability
+            const link1_url = btn.getAttribute('data-link-1-url');
+            const link1_text = btn.getAttribute('data-link-1-text');
+            const link2_url = btn.getAttribute('data-link-2-url');
+            const link2_text = btn.getAttribute('data-link-2-text');
+
+            // Check for Link 1
+            if (link1_url && link1_text) {
               const link1 = document.createElement("a");
-              link1.href = data.link1Url;
+              link1.href = link1_url;
               link1.target = "_blank";
               link1.className = "inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-lg transition-colors text-center";
-              link1.textContent = data.link1Text + " ↗";
+              link1.textContent = link1_text + " ↗";
               modalLinks.appendChild(link1);
             }
-
-            // Link 2
-            if (data.link2Url && data.link2Text) {
+            
+            // Check for Link 2
+            if (link2_url && link2_text) {
               const link2 = document.createElement("a");
-              link2.href = data.link2Url;
+              link2.href = link2_url;
               link2.target = "_blank";
               link2.className = "inline-block bg-slate-600 hover:bg-slate-500 text-white font-medium py-3 px-5 rounded-lg transition-colors text-center";
-              link2.textContent = data.link2Text + " ↗";
+              link2.textContent = link2_text + " ↗";
               modalLinks.appendChild(link2);
             }
 
-            // 4. Show Modal
-            modal.classList.add("visible");
+            // 4. Measure modal and check screen boundaries
+            
+            modalContent.classList.remove("invisible"); 
+            const modalWidth = modalContent.offsetWidth;
+            modalContent.classList.add("invisible"); 
+
+            const projectCard = e.target.closest('.project-card-glow');
+            const cardRect = projectCard.getBoundingClientRect();
+            const scrollY = window.scrollY;
+            const viewportWidth = window.innerWidth;
+            const padding = 16; 
+
+            const cardCenterX = cardRect.left + (cardRect.width / 2);
+            const idealModalLeft = cardCenterX - (modalWidth / 2);
+            const idealModalRight = cardCenterX + (modalWidth / 2);
+            let newLeft = cardCenterX;
+
+            if (idealModalLeft < padding) {
+              newLeft = padding + (modalWidth / 2);
+            } else if (idealModalRight > (viewportWidth - padding)) {
+              newLeft = viewportWidth - padding - (modalWidth / 2);
+            }
+            
+            if (modalWidth + (2 * padding) > viewportWidth) {
+              newLeft = viewportWidth / 2;
+            }
+
+            // 5. Position Modal
+            backdrop.style.height = document.documentElement.scrollHeight + "px";
+            
+            modalContent.style.top = (cardRect.top + scrollY + 20) + "px";
+            modalContent.style.left = newLeft + "px";
+            modalContent.style.transform = "translateX(-50%)";
+
+            // 6. Show both elements
+            backdrop.classList.remove("invisible", "opacity-0");
+            modalContent.classList.remove("invisible", "opacity-0");
           });
         });
 
-        // Function to close modal
+        // --- Close Modal Logic ---
         const closeModal = () => {
-          modal.classList.remove("visible");
-        };
+          backdrop.classList.add("invisible", "opacity-0");
+          modalContent.classList.add("invisible", "opacity-0");
+          
+          backdrop.style.height = "";
+          modalContent.style.top = "";
+          modalContent.style.left = "";
+          modalContent.style.transform = "";
+        }; 
 
-        // Close modal when close button is clicked
         modalCloseBtn.addEventListener("click", closeModal);
-
-        // Close modal when clicking on the backdrop
-        modal.addEventListener("click", (e) => {
-          if (e.target === modal) {
+        backdrop.addEventListener("click", (e) => { 
+          if (e.target === backdrop) { 
             closeModal();
           }
         });
+        
+        // --- Drag-and-Drop Logic has been removed ---
+
       });
       // ===================================
       //     END OF PROJECT MODAL SCRIPT
       // ===================================
 
-      // ===================================
-      //       BACK TO TOP SCRIPT
-      // ===================================
-      document.addEventListener("DOMContentLoaded", () => {
-        const backToTopBtn = document.getElementById("back-to-top-btn");
+    // ===================================
+    //       BACK TO TOP SCRIPT
+    // ===================================
+    document.addEventListener("DOMContentLoaded", () => {
+      const backToTopBtn = document.getElementById("back-to-top-btn");
 
-        // Show/hide button on scroll
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 400) { // Show after 400px of scrolling
-            backToTopBtn.classList.add("visible");
-          } else {
-            backToTopBtn.classList.remove("visible");
-          }
-        });
+      // Show/hide button on scroll
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 400) {
+          // Show after 400px of scrolling
+          backToTopBtn.classList.add("visible");
+        } else {
+          backToTopBtn.classList.remove("visible");
+        }
+      });
 
-        // Scroll to top on click
-        backToTopBtn.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
+      // Scroll to top on click
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
       });
-      // ===================================
-      //     END OF BACK TO TOP SCRIPT
-      // ===================================
+    });
+    // ===================================
+    //     END OF BACK TO TOP SCRIPT
+    // ===================================
 
     // --- Add this script for Active Nav Highlighting ---
     document.addEventListener("DOMContentLoaded", () => {
@@ -1508,64 +1422,41 @@
       cursorChar: "...", // Character for the cursor
       smartBackspace: true, // Only backspace characters that don't match the next string
     });
-
   </script>
-  <div
-      id="project-modal"
-      class="fixed inset-0 bg-slate-900 bg-opacity-70 backdrop-blur-sm z-50 flex justify-center items-center p-4 transition-opacity duration-300 opacity-0 invisible"
-    >
-      <div
-        id="modal-content"
-        class="bg-slate-800 rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto transform transition-all duration-300 scale-95 opacity-0"
-      >
-        <div
-          class="flex justify-between items-center p-5 border-b border-slate-700 sticky top-0 bg-slate-800 z-10"
-        >
-          <h3 id="modal-title" class="text-2xl font-bold text-white">
-            Project Title Goes Here
-          </h3>
-          <button
-            id="modal-close-btn"
-            class="text-slate-400 hover:text-white transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-7 w-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
+  <div id="project-backdrop"
+    class="absolute top-0 left-0 right-0 bg-slate-900 bg-opacity-70 backdrop-blur-sm z-40 transition-opacity duration-300 opacity-0 invisible">
+  </div>
 
-        <div class="p-6">
-          <img
-            id="modal-image"
-            src=""
-            alt="Project Screenshot"
-            class="w-full h-auto max-h-72 object-cover rounded-md mb-6"
-          />
-          <h4 class="text-xl font-bold text-white mb-3">About this project</h4>
-          <p id="modal-description" class="text-slate-300 mb-6">
-            Project description goes here.
-          </p>
-
-          <h4 class="text-xl font-bold text-white mb-3">Technology Stack</h4>
-          <div id="modal-tech-stack" class="flex flex-wrap gap-2 mb-6">
-            </div>
-
-          <h4 class="text-xl font-bold text-white mb-4">Project Links</h4>
-          <div id="modal-links" class="flex flex-col sm:flex-row gap-4">
-            </div>
-        </div>
-      </div>
+  <div id="modal-content"
+    class="absolute bg-slate-800 rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto transition-opacity duration-300 opacity-0 invisible z-50">
+    <div
+      class="flex justify-between items-center p-5 border-b border-slate-700 sticky top-0 bg-slate-800 z-10">
+      <h3 id="modal-title" class="text-2xl font-bold text-white">
+        Project Title Goes Here
+      </h3>
+      <button id="modal-close-btn" class="text-slate-400 hover:text-white transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
-    </body>
+
+    <div class="p-6">
+      <img id="modal-image" src="" alt="Project Screenshot"
+        class="w-full h-auto max-h-72 object-cover rounded-md mb-6" />
+      <h4 class="text-xl font-bold text-white mb-3">About this project</h4>
+      <p id="modal-description" class="text-slate-300 mb-6">
+        Project description goes here.
+      </p>
+
+      <h4 class="text-xl font-bold text-white mb-3">Technology Stack</h4>
+      <div id="modal-tech-stack" class="flex flex-wrap gap-2 mb-6"></div>
+
+      <h4 class="text-xl font-bold text-white mb-4">Project Links</h4>
+      <div id="modal-links" class="flex flex-col sm:flex-row gap-4"></div>
+    </div>
+  </div>
+</body>
+
 </html>
